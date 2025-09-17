@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="El-Kavod Evangelical Church - Worship, Community, Service. Join our services, events, and ministries in Ethiopia." />
+  <meta name="keywords" content="El-Kavod, Church, Ethiopian Church, Evangelical, Worship, Sermons, Donate" />
+  <title>El-Kavod Evangelical Church — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#1e5fff;
+      --accent-2:#6a8cff;
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa7bf;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue';background:linear-gradient(180deg,#071126 0%, #081428 50%, #061021 100%);color:#e6eef8;}
+    a{color:var(--accent);text-decoration:none}
+    header{position:sticky;top:0;backdrop-filter: blur(6px);background:linear-gradient(90deg, rgba(3,7,18,0.6), rgba(6,10,20,0.6));border-bottom:1px solid rgba(255,255,255,0.03);z-index:40}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;gap:18px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:white}
+    nav{margin-left:auto;display:flex;gap:14px;align-items:center}
+    .cta{background:var(--accent);padding:8px 14px;border-radius:10px;color:#fff;font-weight:600}
+    .hero{padding:48px 0;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:24px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:34px;margin:0 0 6px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .features{display:flex;gap:10px;flex-wrap:wrap}
+    .feature{background:var(--glass);padding:10px 12px;border-radius:10px;font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:center}
+    .stats{display:flex;gap:14px;margin-top:12px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:10px;text-align:center;width:120px}
+    .sections{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:26px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .sermons-list{display:flex;flex-direction:column;gap:12px}
+    .sermon{display:flex;gap:12px;align-items:center}
+    .thumbnail{width:84px;height:56px;background:#07182a;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+    .events{display:flex;flex-direction:column;gap:8px}
+    .event{display:flex;justify-content:space-between;gap:12px;padding:8px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    form input, form textarea, .search input{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:white;cursor:pointer}
+    footer{margin-top:34px;padding:22px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+    .topbar{display:flex;gap:8px;align-items:center}
+    .menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px}
+    .controls{display:flex;gap:8px}
+    .search{display:flex;gap:8px;align-items:center;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:6px;border-radius:10px}
+    .mini{font-size:13px;color:var(--muted)}
+    .lang-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px}
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,12,0.6);visibility:hidden;opacity:0;transition:all .18s}
+    .modal.open{visibility:visible;opacity:1}
+    .modal .content{background:#021227;padding:18px;border-radius:12px;width:min(720px,94%);max-height:86vh;overflow:auto}
+    .badge{background:rgba(255,255,255,0.04);padding:6px 8px;border-radius:999px;font-size:12px}
+    .staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .staff{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#2a6aff,#7eaaff);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .search-results{position:absolute;top:52px;right:0;background:#071428;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);width:320px;display:none}
+    .dark-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .sections{grid-template-columns:1fr}
+      nav{display:none}
+      .menu-btn{display:inline-flex;margin-left:auto}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .staff-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">EK</div>
+        <div>
+          <div style="font-weight:700">El-Kavod Evangelical Church</div>
+          <div class="mini">Ethiopia • Worship • Community</div>
+        </div>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="open menu">☰</button>
+      <nav id="mainNav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#sermons">Sermons</a>
+        <a href="#events">Events</a>
+        <a href="#connect">Connect</a>
+        <a class="cta" href="#donate">Donate</a>
+      </nav>
+
+      <div class="controls">
+        <div class="search" role="search">
+          <input id="searchInput" placeholder="Search sermons, events, people..." aria-label="search" />
+          <button id="searchBtn" aria-label="search">🔎</button>
+        </div>
+        <button class="lang-toggle" id="langBtn">AM / EN</button>
+        <button class="dark-toggle" id="darkBtn">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Welcome to El-Kavod Evangelical Church</h1>
+        <p class="lead">A place of worship, compassion and service — join us for Sunday service, community outreach and live sermons.</p>
+        <div class="features">
+          <div class="feature">Live Stream</div>
+          <div class="feature">Sermon Archive</div>
+          <div class="feature">Events & Calendar</div>
+          <div class="feature">Online Giving</div>
+          <div class="feature">Volunteer</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div style="font-weight:700;font-size:18px">1,200+</div><div class="mini">Members</div></div>
+          <div class="stat"><div style="font-weight:700;font-size:18px">12</div><div class="mini">Active Ministries</div></div>
+          <div class="stat"><div style="font-weight:700;font-size:18px">15</div><div class="mini">Events / month</div></div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:10px">
+          <a class="cta" href="#sermons">Watch Sermons</a>
+          <a style="background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px" href="#events">Upcoming Events</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:700">Next Service</div>
+            <div class="badge">Sunday • 10:00 AM</div>
+          </div>
+          <p class="mini" style="margin-top:8px;color:var(--muted)">Join us for worship and message. Children's program and refreshments after service.</p>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0" />
+
+          <div style="display:flex;gap:8px;align-items:center">
+            <button id="liveBtn">▶️ Live Stream</button>
+            <button style="background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px" id="giveBtn">Donate</button>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <a href="#connect">Volunteer</a>
+              <a href="#gallery">Gallery</a>
+              <a href="#about">Our Story</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sections">
+      <div>
+        <div id="about" class="card">
+          <h2>About El-Kavod</h2>
+          <p class="mini">El-Kavod Evangelical Church is committed to worship, discipleship and serving our community in Ethiopia. We gather weekly and run outreach programs in education, healthcare and relief.</p>
+          <p class="mini">Address: Addis Ababa — Church Road 12 • Service Languages: Amharic & English</p>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <div class="badge">Worship</div>
+            <div class="badge">Youth</div>
+            <div class="badge">Outreach</div>
+            <div class="badge">Media</div>
+          </div>
+        </div>
+
+        <div id="sermons" class="card" style="margin-top:12px">
+          <h3>Latest Sermons</h3>
+          <div class="sermons-list" id="sermonList">
+            <!-- populated by JS -->
+          </div>
+        </div>
+
+        <div id="events" class="card" style="margin-top:12px">
+          <h3>Upcoming Events</h3>
+          <div class="events" id="eventsList"></div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button id="addEventBtn">Add Sample Event</button>
+            <button id="calendarBtn" onclick="openModal('calendarModal')">Open Calendar</button>
+          </div>
+        </div>
+
+        <div id="gallery" class="card" style="margin-top:12px">
+          <h3>Gallery</h3>
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <input id="galleryFilter" placeholder="Filter (worship, youth, outreach)" />
+            <button id="filterBtn">Filter</button>
+          </div>
+          <div class="gallery" id="galleryGrid">
+            <!-- images by JS -->
+          </div>
+        </div>
+
+        <div id="connect" class="card" style="margin-top:12px">
+          <h3>Connect With Us</h3>
+          <form id="contactForm">
+            <input id="name" placeholder="Your name" required />
+            <input id="email" type="email" placeholder="Email" required />
+            <textarea id="message" placeholder="Message" rows="4"></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button type="submit">Send Message</button>
+              <button type="button" onclick="openModal('volunteerModal')" style="background:transparent;border:1px solid rgba(255,255,255,0.04)">Volunteer</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Donate Online</h4>
+          <p class="mini">Support the church's ministries — secure donation form.</p>
+          <form id="donateForm">
+            <input id="donorName" placeholder="Full name" required />
+            <input id="amount" type="number" placeholder="Amount (ETB)" required />
+            <select id="method"><option>Card</option><option>Mobile Money</option><option>Bank Transfer</option></select>
+            <div style="margin-top:8px;display:flex;gap:8px"><button type="submit">Donate</button><button type="button" id="donateDemo">Demo Donate</button></div>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Staff</h4>
+          <div class="staff-grid">
+            <div class="staff"><div class="avatar">PG</div><div><div style="font-weight:700">Pastor Getachew</div><div class="mini">Lead Pastor</div></div></div>
+            <div class="staff"><div class="avatar">TM</div><div><div style="font-weight:700">Tsehay Mesfin</div><div class="mini">Youth Director</div></div></div>
+            <div class="staff"><div class="avatar">MT</div><div><div style="font-weight:700">Mulu Tadesse</div><div class="mini">Media</div></div></div>
+            <div class="staff"><div class="avatar">EN</div><div><div style="font-weight:700">Eliyas Negash</div><div class="mini">Outreach</div></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Newsletter</h4>
+          <p class="mini">Get weekly updates</p>
+          <div style="display:flex;gap:8px"><input id="newsletterEmail" placeholder="Email" /><button id="subscribeBtn">Subscribe</button></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Map & Contact</h4>
+          <p class="mini">Addis Ababa, Ethiopia</p>
+          <div style="height:160px;background:#071428;border-radius:10px;display:flex;align-items:center;justify-content:center">Map Placeholder</div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-weight:700">El-Kavod Evangelical Church</div>
+          <div class="mini">© " + new Date().getFullYear() + " El-Kavod</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <a href="#">Privacy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modals -->
+  <div id="volunteerModal" class="modal" aria-hidden>
+    <div class="content">
+      <h3>Volunteer Sign Up</h3>
+      <p class="mini">Tell us your interests and we'll connect you to a ministry.</p>
+      <form id="volForm">
+        <input id="volName" placeholder="Full name" required />
+        <input id="volPhone" placeholder="Phone" />
+        <select id="volArea"><option>Children</option><option>Youth</option><option>Outreach</option><option>Media</option></select>
+        <div style="margin-top:8px"><button type="submit">Sign Up</button><button type="button" onclick="closeModal('volunteerModal')" style="background:transparent;border:1px solid rgba(255,255,255,0.04)">Cancel</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="calendarModal" class="modal" aria-hidden>
+    <div class="content">
+      <h3>Event Calendar</h3>
+      <div id="calendar" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px"></div>
+      <div style="margin-top:12px;display:flex;gap:8px"><button onclick="closeModal('calendarModal')">Close</button></div>
+    </div>
+  </div>
+
+  <script>
+    // Simple data & helpers
+    const sermons = [
+      {title:'Walking by Faith', speaker:'Pastor Getachew', date:'2025-08-03', summary:'Encouragement for disciples.'},
+      {title:'Love in Action', speaker:'Tsehay Mesfin', date:'2025-07-20', summary:'Serving the community.'},
+      {title:'Hope & Restoration', speaker:'Guest', date:'2025-06-15', summary:'A message of healing.'}
+    ];
+
+    const events = [
+      {title:'Sunday Service', date:'2025-09-14', time:'10:00 AM'},
+      {title:'Youth Night', date:'2025-09-19', time:'6:00 PM'}
+    ];
+
+    const galleryPhotos = [
+      {tag:'worship', alt:'Congregation worshiping'},
+      {tag:'youth', alt:'Youth event'},
+      {tag:'outreach', alt:'Community outreach'},
+      {tag:'worship', alt:'Choir singing'},
+      {tag:'media', alt:'Media team'},
+      {tag:'outreach', alt:'Relief distribution'}
+    ];
+
+    // Populate sermons
+    const sermonList = document.getElementById('sermonList');
+    sermons.forEach(s => {
+      const el = document.createElement('div'); el.className='sermon';
+      el.innerHTML = `<div class="thumbnail">▶</div><div style="flex:1"><div style="font-weight:700">${s.title}</div><div class=\"mini\">${s.speaker} • ${s.date}</div><div class=\"mini\">${s.summary}</div></div><div><button onclick=\"openModal('playerModal', ${JSON.stringify(s).replace(/'/g,'\\\'')} )\">Play</button></div>`;
+      sermonList.appendChild(el);
+    });
+
+    // Populate events
+    const eventsList = document.getElementById('eventsList');
+    function renderEvents(){
+      eventsList.innerHTML='';
+      events.forEach(ev=>{
+        const d = document.createElement('div'); d.className='event';
+        d.innerHTML = `<div><div style=\"font-weight:700\">${ev.title}</div><div class=\"mini\">${ev.date}</div></div><div class=\"mini\">${ev.time}</div>`;
+        eventsList.appendChild(d);
+      })
+    }
+    renderEvents();
+
+    // gallery
+    const grid = document.getElementById('galleryGrid');
+    function renderGallery(filter){
+      grid.innerHTML='';
+      galleryPhotos.filter(p=>!filter||p.tag.includes(filter.toLowerCase())).forEach((p,i)=>{
+        const img = document.createElement('img');
+        // tiny SVG placeholder
+        const svg = `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"600\" height=\"400\"><rect width=\"100%\" height=\"100%\" fill=\"#0b2233\"/><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Nunito\" font-size=22 fill=\"#8fb3ff\">${p.alt}</text></svg>`;
+        img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+        img.alt = p.alt;
+        grid.appendChild(img);
+      })
+    }
+    renderGallery();
+
+    // event add demo
+    document.getElementById('addEventBtn').addEventListener('click', ()=>{events.push({title:'New Outreach',date:new Date().toISOString().slice(0,10),time:'09:00 AM'});renderEvents();});
+
+    // Filter gallery
+    document.getElementById('filterBtn').addEventListener('click', ()=>{renderGallery(document.getElementById('galleryFilter').value)});
+
+    // Modal helpers
+    function openModal(id){document.getElementById(id).classList.add('open');document.getElementById(id).setAttribute('aria-hidden','false')}
+    function closeModal(id){document.getElementById(id).classList.remove('open');document.getElementById(id).setAttribute('aria-hidden','true')}
+
+    // Forms (basic validation + demo)
+    document.getElementById('contactForm').addEventListener('submit', e=>{e.preventDefault();alert('Message sent — thank you!');e.target.reset();});
+    document.getElementById('donateForm').addEventListener('submit', e=>{e.preventDefault();alert('Thank you for your donation — this is a demo.');e.target.reset();});
+    document.getElementById('volForm').addEventListener('submit', e=>{e.preventDefault();alert('Thanks for volunteering — we will contact you.');closeModal('volunteerModal');});
+    document.getElementById('subscribeBtn').addEventListener('click', ()=>{const em=document.getElementById('newsletterEmail').value; if(!em) return alert('Enter email'); alert('Subscribed: '+em);});
+    document.getElementById('donateDemo').addEventListener('click', ()=>{alert('Demo donation processed — sandbox mode.');});
+
+    // Search (simple local search)
+    document.getElementById('searchBtn').addEventListener('click', ()=>{
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      if(!q) return alert('Enter search term');
+      const results = [];
+      sermons.forEach(s=>{ if(s.title.toLowerCase().includes(q)||s.speaker.toLowerCase().includes(q)) results.push('Sermon: '+s.title); });
+      events.forEach(ev=>{ if(ev.title.toLowerCase().includes(q)) results.push('Event: '+ev.title); });
+      if(results.length) alert('Search results:\n' + results.join('\n'));
+      else alert('No results found');
+    });
+
+    // simple menu toggle for mobile
+    document.getElementById('menuBtn').addEventListener('click', ()=>{const nav=document.getElementById('mainNav');nav.style.display=nav.style.display==='flex'?'none':'flex';});
+
+    // dark toggle (demonstrates accessibility setting)
+    document.getElementById('darkBtn').addEventListener('click', ()=>{
+      if(document.documentElement.style.getPropertyValue('--bg')){
+        document.documentElement.style.removeProperty('--bg');
+        alert('Toggled theme (demo)');
+      } else { document.documentElement.style.setProperty('--bg','true'); alert('Toggled theme (demo)'); }
+    });
+
+    // small ARIA-friendly live player modal generator
+    const playerModal = document.createElement('div'); playerModal.className='modal'; playerModal.id='playerModal';
+    playerModal.innerHTML=`<div class="content"><h3 id=\"playerTitle\">Player</h3><p class=\"mini\">Media playback demo (replace with real stream)</p><div style=\"background:#071428;height:240px;border-radius:8px;display:flex;align-items:center;justify-content:center;\">Player Placeholder</div><div style=\"margin-top:12px;text-align:right;\"><button onclick=\"document.getElementById('playerModal').classList.remove('open')\">Close</button></div></div>`;
+    document.body.appendChild(playerModal);
+
+    // donate quick actions
+    document.getElementById('giveBtn').addEventListener('click', ()=>{document.getElementById('amount').focus();window.scrollTo({top:document.getElementById('donateForm').offsetTop-20,behavior:'smooth'})});
+    document.getElementById('liveBtn').addEventListener('click', ()=>openModal('playerModal'));
+
+    // Accessibility: keyboard close for modals
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape') document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));
+    });
+
+    // Calendar modal basic grid fill (current month)
+    function buildCalendar(){
+      const cal=document.getElementById('calendar'); cal.innerHTML='';
+      const now=new Date(); const year=now.getFullYear(); const month=now.getMonth();
+      const first=new Date(year,month,1); const startDay=first.getDay();
+      const days = new Date(year,month+1,0).getDate();
+      // weekday headers
+      ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d=>{const h=document.createElement('div');h.style.fontWeight='700';h.className='mini';h.textContent=d;cal.appendChild(h)});
+      for(let i=0;i<startDay;i++){cal.appendChild(document.createElement('div'))}
+      for(let d=1;d<=days;d++){const cell=document.createElement('div');cell.style.padding='8px';cell.style.borderRadius='6px';cell.style.background='linear-gradient(180deg, rgba(255,255,255,0.01), transparent)';cell.textContent=d;cal.appendChild(cell)}
+    }
+    buildCalendar();
+
+    // init year in footer
+    document.querySelector('footer .mini').textContent = '© ' + new Date().getFullYear() + ' El-Kavod';
+
+  </script>
+</body>
+</html>
+
