@@ -161,6 +161,21 @@ body {
   background: #666;
 }
 
+.Prayer{
+  display: inline-block;   /* Needed for transform to work nicely */
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 18px;
+  transition: transform 0.3s, color 0.3s;
+}
+.Prayer:hover {
+  transform: scale(1.2);  /* Zoom 20% bigger */
+  color: #0056b3;         /* Optional: change color on hover */
+  cursor: pointer;
+}
+
+
+
 /* ==============================
    DONATION SECTION
 ============================== */
