@@ -156,8 +156,15 @@
         <img src="Images/Soccer1.png" alt="Soccer Team 1" />
         <img src="Images/Soccer2.png" alt="Soccer Team 2" />
         <img src="Images/Soccer3.png" alt="Soccer Team 3" />
-        <img src="Images/Soccer5.png" alt="Soccer Team 5" />
-        <img src="Images/Soccer6.png" alt="Soccer Team 6" />
+        <img src="Images/Soccer4.jpeg" alt="Soccer Team 4" />
+        <img src="Images/soccer5.PNG" alt="Soccer Team 5" />
+        <img src="Images/soccer6.PNG" alt="Soccer Team 6" />
+        <img src="Images/Soccer7.png" alt="Soccer Team 7" />
+        <img src="Images/Soccer8.png" alt="Soccer Team 8" />
+        <img src="Images/Soccer9.png" alt="Soccer Team 9" />
+        <img src="Images/Soccer10.png" alt="Soccer Team 10" />
+        <img src="Images/Soccer11.png" alt="Soccer Team 11" />
+
       </div>
     </div>
   </section>
@@ -259,14 +266,27 @@
     navLinks.classList.toggle("show");
   });
 
-  // Close menu + reset hamburger when clicking a link
+  // Close menu when clicking a link
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("show");
       hamburger.classList.remove("active");
     });
   });
+
+  //  Close menu if clicking outside
+  document.addEventListener("click", (event) => {
+    if (
+      !navLinks.contains(event.target) && // not clicking inside the menu
+      !hamburger.contains(event.target) && // not clicking the hamburger itself
+      navLinks.classList.contains("show") // menu is open
+    ) {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("active");
+    }
+  });
 </script>
+
 
   
 
