@@ -252,12 +252,22 @@
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
-  
+
+  // Toggle menu open/close when clicking the hamburger
   hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
     hamburger.classList.toggle("active");
+    navLinks.classList.toggle("show");
   });
-  </script>
+
+  // Close menu + reset hamburger when clicking a link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("active");
+    });
+  });
+</script>
+
   
 
 
