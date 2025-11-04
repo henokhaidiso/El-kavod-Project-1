@@ -170,7 +170,6 @@ p {
   }
 }
 
-
 /* =========================================
    HERO SECTION - Modernized with Lighting
 ========================================= */
@@ -263,7 +262,16 @@ p {
   transition: 0.4s ease;
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.3);
 }
-
+.Join-btn{
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  border-radius: 20px;
+  color: white;
+  font-weight: 150;
+  text-decoration: none;
+  transition: 0.4s ease;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.3);
+}
 .hero-btn:hover {
   background: linear-gradient(90deg, #00c6ff, #0078ff);
   transform: scale(1.08);
@@ -337,6 +345,11 @@ p {
   color: #1a252f;
   margin-bottom: 0.8rem;
 }
+.card .passcode{
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
 
 .link-btn {
   display: inline-block;
@@ -355,20 +368,25 @@ p {
 }
 
 /* =========================================
-   GALLERY
+   GALLERY — manual slider + snap + swipe
 ========================================= */
 .gallery {
   margin-top: 2rem;
-  overflow: hidden;
   position: relative;
+  overflow: hidden; /* keep the frame clean */
 }
 
 .gallery-scroll {
   display: flex;
   gap: 1rem;
-  animation: scroll 35s linear infinite;
+  overflow-x: auto;             /* manual scroll / swipe */
+  scroll-behavior: smooth;
+  transition: transform 0.5s ease;
+  scroll-snap-type: x mandatory; /* snap to each image */
+  -webkit-overflow-scrolling: touch;
 }
 
+/* snap each image */
 .gallery img {
   width: 250px;
   height: 180px;
@@ -376,31 +394,51 @@ p {
   border-radius: 15px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  scroll-snap-align: center;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
 }
 
-.gallery-scroll {
-  display: flex;
-  gap: 1rem;
-  animation: scroll 35s linear infinite;
-  /* Add this: */
-  animation-play-state: running; /* default */
+/* hide scrollbar (optional) */
+.gallery-scroll::-webkit-scrollbar { display: none; }
+.gallery-scroll { scrollbar-width: none; }
+
+/* drag cursor (optional) */
+.gallery-scroll.dragging {
+  cursor: grabbing;
 }
 
-.gallery-scroll:hover {
-  animation-play-state: paused; /* pause when hovering */
+/* arrow buttons */
+.gallery button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s, opacity 0.3s;
 }
 
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.gallery button:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
- /*========================================
+.gallery .prev {
+  left: 10px;
+}
+
+.gallery .next {
+  right: 10px;
+}
+
+/* =========================================
    OUR Church Elder
 ========================================= */
 .leaders-grid {
@@ -437,7 +475,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* dark transparent overlay */
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -447,7 +485,7 @@ p {
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* so it doesn’t block hover */
+  pointer-events: none;
 }
 
 .leader:hover .leader-name {
@@ -587,7 +625,6 @@ footer {
   color: #00c6ff;
 }
 
-
 .copyright {
   font-size: 0.9rem;
   color: #bbb;
@@ -606,6 +643,3 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-

@@ -10,14 +10,12 @@
   <link rel="icon" type="image/png" href="Images/ChurchLogo.png" />
 
   <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  
+  <!-- Font Awesome (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="Style.css" />
@@ -51,11 +49,11 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <!-- Hamburger -->
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
   <!-- ===== ABOUT ===== -->
@@ -82,9 +80,10 @@
         <h3>Bible Studies</h3>
         <p>Mon 6–8 PM | Wed 7–8:30 PM | Sat 10 AM–12 PM</p>
         <a href="https://us06web.zoom.us/j/3989010849" target="_blank" class="link-btn">Join on Zoom</a>
+        <p class="passcode"><strong>Passcode: 2023</strong></p>
       </div>
       <div class="card">
-        <i class="fas fa-book-bible"></i>
+        <i class="fas fa-bible"></i>
         <h3>Prayer</h3>
         <p>Friday Prayer 6:00 PM – 8:00 PM</p>
       </div>
@@ -94,8 +93,28 @@
   <!-- ===== COMMUNITY ===== -->
   <section id="community" class="section fade-in">
     <h2>Our Community</h2>
-    <p>We are more than a church—we are family. Through small groups, outreach, and events, we build faith and fellowship together.</p>
+    <p>We are more than a church — we are family.
+      Here, you’re not just attending a service, you’re finding a place to belong.
+      We grow together through small groups, outreach, worship, and everyday life.
+      We support one another, celebrate together, and walk in faith side-by-side.
+      </p>
+
+      <br>
+
+      <p> <strong> “Carry each other’s burdens, and in this way you will fulfill the law of Christ.” — <i> Galatians 6:2</i> </Strong> </p>
+
+      <br>
+
+      <p> This is a home where you are seen, known, and loved. </p> 
+      <p> <Strong> Welcome to the family!</Strong></p>
+    <p> 
+      
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScl7bpnDsl7m74Fnpvw2uXRkA0zHKq0_UzGrJ9ZZLA5668vlA/viewform" target="_blank" class="Join-btn">Join Our Community Groups</a>
+    </p>
+  
+
     <div class="gallery">
+      <button class="prev" aria-label="Previous slide">&#10094;</button>
       <div class="gallery-scroll">
         <img src="Images/Batized.png" alt="Baptism" />
         <img src="Images/peopleshot.png" alt="Church Family" />
@@ -116,42 +135,51 @@
         <img src="Images/comm2.png" alt="Community" />
         <img src="Images/Valantine.png" alt="Valentine Event" />
       </div>
+      <button class="next" aria-label="Next slide">&#10095;</button>
     </div>
   </section>
 
   <!-- ===== LEADERS ===== -->
-<section id="leaders" class="section bg-light fade-in">
-  <h2>Our Church Elders</h2>
-  <div class="leaders-grid">
-    <div class="leader">
-      <img src="Images/Leader_john.png" alt="Leader John" />
-      <span class="leader-name">Mr. John</span>
+  <section id="leaders" class="section bg-light fade-in">
+    <h2>Our Church Elders</h2>
+    <div class="leaders-grid">
+      <div class="leader">
+        <img src="Images/Leader_john.png" alt="Leader John" />
+        <span class="leader-name">Mr. John</span>
+      </div>
+      <div class="leader">
+        <img src="Images/Leader_Teme.jpeg" alt="Leader Teme" />
+        <span class="leader-name">Mr. Temesgen</span>
+      </div>
+      <div class="leader">
+        <img src="Images/Leader_worke.jpeg" alt="Leader Worke" />
+        <span class="leader-name">Mr. Workneh</span>
+      </div>
+      <div class="leader">
+        <img src="Images/DR.jpeg" alt="Leader Sammy" />
+        <span class="leader-name">Dr. Sammy</span>
+      </div>
+      <div class="leader">
+        <img src="Images/Elias.png" alt="Leader Elias" />
+        <span class="leader-name">Mr. Elias</span>
+      </div>
     </div>
-    <div class="leader">
-      <img src="Images/Leader_Teme.jpeg" alt="Leader Teme" />
-      <span class="leader-name">Mr. Temesgen</span>
-    </div>
-    <div class="leader">
-      <img src="Images/Leader_worke.jpeg" alt="Leader Worke" />
-      <span class="leader-name">Mr. Workneh</span>
-    </div>
-    <div class="leader">
-      <img src="Images/DR.jpeg" alt="Leader Sammy" />
-      <span class="leader-name">Dr. Sammy</span>
-    </div>
-    <div class="leader">
-      <img src="Images/Elias.png" alt="Leader Elias" />
-      <span class="leader-name">Mr. Elias</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-  
   <!-- ===== SOCCER ===== -->
   <section id="soccer" class="section fade-in">
     <h2>Our Soccer Team</h2>
-    <p>United by faith and passion for the game, our soccer team fosters friendship, teamwork, and sportsmanship on and off the field.</p>
+    <p>United by faith and our love for the game, our soccer team is more than a team — it’s a community.
+      We learn together, grow together, and encourage one another both on and off the field.
+      Through teamwork, prayer, and fellowship, we play to honor Christ in everything we do.</p>
+
+      <br>
+      
+      <p> <Strong> “So whether you eat or drink, or whatever you do, do it all for the glory of God.” — <i> </i>1 Corinthians 10:31</i> </Strong> </p>
+      <br>
+
     <div class="gallery">
+      <button class="prev" aria-label="Previous slide">&#10094;</button>
       <div class="gallery-scroll">
         <img src="Images/Soccer1.png" alt="Soccer Team 1" />
         <img src="Images/Soccer2.png" alt="Soccer Team 2" />
@@ -164,8 +192,8 @@
         <img src="Images/Soccer9.png" alt="Soccer Team 9" />
         <img src="Images/Soccer10.png" alt="Soccer Team 10" />
         <img src="Images/Soccer11.png" alt="Soccer Team 11" />
-
       </div>
+      <button class="next" aria-label="Next slide">&#10095;</button>
     </div>
   </section>
 
@@ -204,7 +232,6 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-
   <footer>
     <div class="footer-content">
       <div>
@@ -218,13 +245,13 @@
       <div>
         <h3>Follow Us</h3>
         <div class="social">
-          <a href="https://www.facebook.com/share/1C8dNPB2ge/?mibextid=wwXIfr" target="_blank">
+          <a href="https://www.facebook.com/share/1C8dNPB2ge/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://youtube.com/@elkavodcharlotte613?si=BY3fRTUPkoHaxD0a" target="_blank">
+          <a href="https://youtube.com/@elkavodcharlotte613?si=BY3fRTUPkoHaxD0a" target="_blank" aria-label="YouTube">
             <i class="fa-brands fa-youtube"></i>
           </a>
-          <a href="https://www.instagram.com/elkavod12/" target="_blank">
+          <a href="https://www.instagram.com/elkavod12/" target="_blank" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>
@@ -232,9 +259,6 @@
     </div>
     <p class="copyright">&copy; 2025 El-Kavod Ethiopian Evangelical Church</p>
   </footer>
-  
-
-  
 
   <!-- ===== JS ===== -->
   <script>
@@ -255,41 +279,104 @@
       img.addEventListener("click", () => window.open(img.src, "_blank"));
     });
   </script>
-<!-- Hamburger Menu Script -->
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
 
-  // Toggle menu open/close when clicking the hamburger
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("show");
-  });
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-  // Close menu when clicking a link
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-      hamburger.classList.remove("active");
+    // Toggle menu open/close when clicking the hamburger
+    hamburger.addEventListener("click", () => {
+      const isActive = hamburger.classList.toggle("active");
+      navLinks.classList.toggle("show");
+      hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
     });
-  });
 
-  //  Close menu if clicking outside
-  document.addEventListener("click", (event) => {
-    if (
-      !navLinks.contains(event.target) && // not clicking inside the menu
-      !hamburger.contains(event.target) && // not clicking the hamburger itself
-      navLinks.classList.contains("show") // menu is open
-    ) {
-      navLinks.classList.remove("show");
-      hamburger.classList.remove("active");
-    }
-  });
-</script>
+    // Close menu when clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
 
+    // Close menu if clicking outside
+    document.addEventListener("click", (event) => {
+      if (
+        !navLinks.contains(event.target) &&
+        !hamburger.contains(event.target) &&
+        navLinks.classList.contains("show")
+      ) {
+        navLinks.classList.remove("show");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
 
-  
+  <!-- Manual slider: arrows, snap, drag/swipe -->
+  <script>
+    document.querySelectorAll(".gallery").forEach(gallerySection => {
+      const scroller = gallerySection.querySelector(".gallery-scroll");
+      const nextBtn  = gallerySection.querySelector(".next");
+      const prevBtn  = gallerySection.querySelector(".prev");
+      if (!scroller || !nextBtn || !prevBtn) return;
 
+      // Step = image width + gap
+      const getStep = () => {
+        const firstImg = scroller.querySelector("img");
+        if (!firstImg) return 300;
+        const imgWidth = firstImg.getBoundingClientRect().width;
+        const styles = getComputedStyle(scroller);
+        const gap = parseFloat(styles.columnGap || styles.gap || 16);
+        return Math.round(imgWidth + gap);
+      };
 
+      const scrollByStep = dir => scroller.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+
+      nextBtn.addEventListener("click", () => scrollByStep(+1));
+      prevBtn.addEventListener("click", () => scrollByStep(-1));
+
+      // Disable/enable buttons at edges
+      const updateButtons = () => {
+        const atStart = scroller.scrollLeft <= 2;
+        const atEnd = Math.abs(scroller.scrollWidth - scroller.clientWidth - scroller.scrollLeft) <= 2;
+        prevBtn.disabled = atStart;
+        nextBtn.disabled = atEnd;
+        prevBtn.style.opacity = atStart ? 0.4 : 1;
+        nextBtn.style.opacity = atEnd ? 0.4 : 1;
+        prevBtn.style.pointerEvents = atStart ? "none" : "auto";
+        nextBtn.style.pointerEvents = atEnd ? "none" : "auto";
+      };
+      scroller.addEventListener("scroll", updateButtons);
+      window.addEventListener("resize", updateButtons);
+      updateButtons();
+
+      // Click-drag / touch-swipe
+      let isDown = false, startX = 0, startLeft = 0;
+      const onDown = (e) => {
+        isDown = true;
+        scroller.classList.add("dragging");
+        startX = (e.touches ? e.touches[0].pageX : e.pageX);
+        startLeft = scroller.scrollLeft;
+      };
+      const onMove = (e) => {
+        if (!isDown) return;
+        const x = (e.touches ? e.touches[0].pageX : e.pageX);
+        const walk = (startX - x);
+        scroller.scrollLeft = startLeft + walk;
+      };
+      const onUp = () => { isDown = false; scroller.classList.remove("dragging"); };
+
+      scroller.addEventListener("mousedown", onDown);
+      scroller.addEventListener("mousemove", onMove);
+      scroller.addEventListener("mouseleave", onUp);
+      scroller.addEventListener("mouseup", onUp);
+      scroller.addEventListener("touchstart", onDown, { passive: true });
+      scroller.addEventListener("touchmove", onMove, { passive: true });
+      scroller.addEventListener("touchend", onUp);
+    });
+  </script>
 </body>
 </html>
