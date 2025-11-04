@@ -367,6 +367,16 @@ p {
   background: #005ed9;
 }
 
+.OurChurchCom{
+font-size: 25px;
+font-style:calc(normal);
+}
+.BibleVerse{
+  font-size: 20px;
+  font-style: italic;
+  color: #555;
+}
+
 /* =========================================
    GALLERY — manual slider + snap + swipe
 ========================================= */
